@@ -1,0 +1,237 @@
+						ignore = 1;
+						printf("Invalid arguments\n");
+						return;
+						reverse = 1;
+					break;
+					break;
+					break;
+					case 'f':
+					case 'r':
+					default:
+				switch(c)
+				{
+				}
+			argsptr = ++*++argv;
+			continue;
+			printf("Out of Memory\n");
+			return -1;
+			return 0;
+			swap(linesptr, ++i, j);
+			while((c = *(argsptr++)) != '\0')
+			{
+			}
+		*s = ((*s >= 'a') && (*s <= 'z')) ? *s + 'A' - 'a' : *s;
+		++i;
+		++linesnum;
+		++s1;
+		++s2;
+		++s;
+		// Add 1 to store '\0'
+		// printf("in for: %s\n", linesptr);
+		// qsort(linesptr, 0, lines - 1, (int (*)(void*, void*))(strcmp));
+		buf[i++] = c;
+		buf[i++] = c;
+		else 
+		if ((*cmp)(linesptr[left], linesptr[j]) < 0)
+		if (*s1 == '\0')
+		if (linesnum >= nlines)
+		linesptr[linesnum] = alloc(linelen + 1);
+		printf("%s", linesptr[i]);
+		printf("Out of Memory\n");
+		qsort(linesptr, 0, lines - 1, (int (*)(void*, void*))(ignore ? istrcmp : strcmp));
+		return NULL;
+		return;
+		strcpy(linesptr[linesnum], buf);
+		while(--argc > 0 && argv[argc][0] == '-')
+		writelines(linesptr, lines);
+		{
+		{
+		{
+		{
+		{
+		}
+		}
+		}
+		}
+		}
+	// printf("after for : %s, i = %d\n", linesptr, i);
+	allocp += size;
+	buf[i] = '\0';
+	buf[i] = buf[j];
+	buf[j] = tmp;
+	char *argsptr, c;
+	char buf1[MAXLINES], buf2[MAXLINES];
+	char buf[MAXLINELENS];
+	char* tmp = buf[i];
+	for (; i < nlines; ++i)
+	for (; j <= right; ++j)
+	i = 0;
+	i = left;
+	if (allocp + size - allocbuf > MAXALLOCSIZE)
+	if (argc > 1)
+	if (c == '\n')
+	if (left >= right)
+	ignore = 0;
+	int c, i;
+	int i = 0;
+	int i = 0;
+	int i, j;
+	int linelen, linesnum;
+	int lines, reverse, ignore;
+	j = left + 1;
+	linesnum = 0;
+	qsort(linesptr, i + 1, right, cmp);
+	qsort(linesptr, left, i - 1, cmp);
+	return *s1 - *s2;
+	return 0;
+	return allocp - size;
+	return i;	
+	return i;
+	return linesnum;
+	return numcmp(s2, s1);
+	return strcmp(buf1, buf2);
+	return strcmp(s1, s2);
+	return strlen(s1) - strlen(s2);
+	reverse = 0;
+	strcpy(buf1, s1);
+	strcpy(buf2, s2);
+	swap(linesptr, left, (left + right) / 2);
+	swap(linesptr, left, i);
+	uppercase(buf1);
+	uppercase(buf2);
+	while(((c = getchar()) != EOF) && (c != '\n') && (i < size))
+	while((linelen = get_line(buf, MAXLINELENS)) > 0)
+	while((lines = readlines(linesptr, MAXLINES)) > 0)
+	while(*s != '\0')
+	while(*s1 == *s2)
+	while(s[i] != '\0')
+	{
+	{
+	{
+	{
+	{
+	{
+	{
+	{
+	{
+	{
+	{
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#define MAXALLOCSIZE MAXLINELENS * MAXLINES
+#define MAXLINELENS 1024
+#define MAXLINES 1024
+#include <stdio.h>
+// CHAR* linesptr[MAXLINES];
+// cha* linesptr[MAXLINES];
+// char* linesptr[MAXLINES];
+// ignore case cmp
+// reversed version of numcmp
+// void qsort(char* linesptr[], int left, int right);
+char *allocp = allocbuf;
+char allocbuf[MAXALLOCSIZE];
+char* alloc(int size)
+char* alloc(int size);
+char* linesptr[MAXLINES];
+int get_line(char buf[], int size)
+int get_line(char buf[], int size);
+int istrcmp(const char* s1, const char* s2)
+int istrcmp(const char* s1, const char* s2);
+int lencmp(const char* s1, const char* s2)
+int main(int argc, char *argv[])
+int numcmp(const char* s1, const char* s2)
+int numcmp(const char*, const char*);
+int readlines(char* linesptr[], int nlines)
+int readlines(char* linesptr[], int nlines);
+int rnumcmp(const char *s1, const char *s2)
+int rnumcmp(const char*, const char*);
+int strcmp(const char* s1, const char* s2)
+int strcmp(const char* s1, const char* s2);
+int strlen(const char* s)
+int strlen(const char* s);
+void qsort(char* linesptr[], int left, int right, int (*cmp)(void *, void*));
+void qsort(char* linesptr[], int left, int right,int (*cmp)(void *, void*))
+void swap(char* buf[], int i, int j)
+void swap(char* buf[], int i, int j);
+void uppercase(char *s)
+void writelines(char* linesptr[], int nlines)
+void writelines(char* linesptr[], int nlines);
+{
+{
+{
+{
+{
+{
+{
+{
+{
+{
+{
+{
+{
+{
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}

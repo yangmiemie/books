@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(int argc, char const *argv[])
+{
+  int pid;
+
+  pid = fork();
+  if (pid == 0)
+  {
+    sleep(1);
+    printf("This is child process\n");
+    exit(1);
+  } 
+  else
+  {
+    printf("This is parent process\n");
+    exit(3);
+  }
+
+  return 0;
+}

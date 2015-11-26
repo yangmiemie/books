@@ -1,0 +1,87 @@
+// Write a function escape(s,t) that converts characters like newline and tab into visible
+// escape sequences like 
+ and 	 as it copies the string t to s . Use a switch . Write a function
+// for the other direction as well, converting escape sequences into the real characters.
+
+#include <stdio.h>
+#define MAXLEN 2048
+
+void escape(char s[], char t[]);
+void escape_reverse(char s[], char t[]);
+
+int main(int argc, char const *argv[])
+{
+	char s[MAXLEN] = {0};
+	char t[MAXLEN] = {0};
+	int c, i;
+
+	i = 0;
+	while((c = getchar()) != EOF)
+	{
+		t[i++] = c;
+	}
+
+	t[i] = '\0';
+	escape(s, t);
+	// escape_reverse(s, t);
+	
+	printf("%s
+", s);
+	return 0;
+}
+
+void escape(char s[], char t[])
+{
+	int i, j;
+
+	for (i = 0, j = 0; t[i] != '\0'; ++i)
+	{
+		switch(t[i])
+		{
+			case '	':
+					s[j++] = '\\';
+					s[j++] = 't';
+				break;
+			case '
+':
+					s[j++] = '\\';
+					s[j++] = 'n';
+				break;
+			default:
+					s[j++] = t[i];
+				break;
+		}
+	}
+
+	s[j] = '\0';
+}
+
+void escape_reverse(char s[], char t[])
+{
+	int i, j;
+	i = 0, j = 0;
+
+	while(t[i] != '\0')
+	{
+		if (t[i] == '\\' && t[i+1] == 'n')
+		{
+			s[j++] = '
+';
+			++i;
+			++i;
+		}
+		else if (t[i] == '\\' && t[i+1] == 't')
+		{
+			s[j++] = '	';
+			++i;
+			++i;
+		}
+		else
+		{
+			s[j++] = t[i++];
+		}
+	}
+
+	s[j] = '\0'; 
+}
+
